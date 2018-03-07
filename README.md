@@ -78,7 +78,12 @@ curl -X GET \
   -o result.json
 ```
 
-* View the file at result.json similar to the below.
+* View the output
+```bash
+cat result.json | jq
+```
+
+* The result should look similar to the below.
 
 ```json
 {
