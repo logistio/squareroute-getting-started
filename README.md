@@ -52,7 +52,7 @@ taskID=$(jq -r '.data.task_id' <<< "$response")
 ```bash
 curl -X GET \
   https://api.squareroute.io/api/v1/ro/task/$taskID/status \
-  -H 'accept: application/json' \
+  -H "accept: application/json" \
   -H "client-id: $clientID" \
   -H "client-secret: $clientSecret"
 ```
@@ -72,7 +72,7 @@ When the job status changes to ```FINISHED``` like below, proceed to retrieve th
 ```bash
 curl -X GET \
   https://api.squareroute.io/api/v1/ro/task/$taskID/result \
-  -H 'accept: application/json' \
+  -H "accept: application/json" \
   -H "client-id: $clientID" \
   -H "client-secret: $clientSecret" \
   -o result.json
