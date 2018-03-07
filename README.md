@@ -31,7 +31,7 @@ response=$(curl -X POST \
   -H "content-type: application/json" \
   -H "client-id: $clientID" \
   -H "client-secret: $clientSecret" \
-  -d @data.json)
+  -d @request.json)
 ```
 
 ```bash
