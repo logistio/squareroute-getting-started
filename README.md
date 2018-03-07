@@ -34,6 +34,7 @@ response=$(curl -X POST \
   -d @request.json)
 ```
 
+* Capture the taskID variable - requires jq (```brew install jq```)
 ```bash
 taskID=$(jq -r '.data.task_id' <<< "$response")
 ```
