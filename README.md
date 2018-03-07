@@ -24,13 +24,52 @@ clientSecret= # e.g. 3MmE9r947MpQmfnwI357cmihotYgsZeeA0leVraWP4Y7amvIlYpkKVWRolZ
 ```
 
 * Submit the request
-
 ```bash
-curl -X POST \
+response=$(curl -X POST \
   https://api.squareroute.io/api/v1/ro/calculate \
   -H "accept: application/json" \
   -H "content-type: application/json" \
   -H "client-id: $clientID" \
   -H "client-secret: $clientSecret" \
-  -d @data.json
+  -d @data.json)
+```
+
+```bash
+taskID=$(jq -r '.data.task_id' <<< "$response")
+```
+
+* Periodically poll for the status of the job
+```bash
+curl -X GET \
+  https://api.squareroute.io/api/v1/ro/task/$taskID/status \
+  -H 'accept: application/json' \
+  -H "client-id: $clientID" \
+  -H "client-secret: $clientSecret"
+```
+
+When the job status changes to ```FINISHED``` like below, proceed to retrieve the result. For small jobs this will be a couple of seconds.
+
+```json
+{
+    "data": {
+        "task_id": "ABCD1234",
+        "status": "FINISHED",
+        "updated_at": "2018-02-28 10:31:55"
+    }
+}
+```
+* Retrieve the result and save it to result.json
+```bash
+curl -X GET \
+  https://api.squareroute.io/api/v1/ro/task/$taskID/result \
+  -H 'accept: application/json' \
+  -H "client-id: $clientID" \
+  -H "client-secret: $clientSecret" \
+  -o result.json
+```
+
+* View the file at result.json similar to the below.
+
+```bash
+
 ```
