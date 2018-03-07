@@ -4,9 +4,11 @@ The below quickstart shows you how to make a curl request using bash.
 
 * Clone this repository
 ```bash
-git clone squareroute-getting-start
+git clone https://github.com/logistio/squareroute-getting-started.git
 ```
-
+```bash
+cd squareroute-getting-started
+```
 
 * Log into ```https://admin.squareroute.io```
 * Copy your credentials from the dashboard on ```https://admin.squareroute.io/ro/settings/accounts```
