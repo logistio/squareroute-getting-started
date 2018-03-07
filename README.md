@@ -23,7 +23,7 @@ clientID= # e.g. tE9vGHSyP8kyu4SodfDczrOo1n7D5dnf
 clientSecret= # e.g. 3MmE9r947MpQmfnwI357cmihotYgsZeeA0leVraWP4Y7amvIlYpkKVWRolZkVz55lRcBcGVPNZ36SdqfeXeEwdlhj2PWgQnzIHeHii2wTsAd2lbB53txNZBoPKZ5545i
 ```
 
-* Submit the request
+* Submit the request (this uses the sample data with 4 stops in result.json, you can modify this with your own data)
 ```bash
 response=$(curl -X POST \
   https://api.squareroute.io/api/v1/ro/calculate \
