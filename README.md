@@ -23,9 +23,9 @@ clientID= # e.g. tE9vGHSyP8kyu4SodfDczrOo1n7D5dnf
 clientSecret= # e.g. 3MmE9r947MpQmfnwI357cmihotYgsZeeA0leVraWP4Y7amvIlYpkKVWRolZkVz55lRcBcGVPNZ36SdqfeXeEwdlhj2PWgQnzIHeHii2wTsAd2lbB53txNZBoPKZ5545i
 ```
 
-* Select a file either request4 for a 4*4 matrix (16 credits, takes approximately 5 seconds), or request1000 for a 1000*1000 matrix (1,000,000 credits, takes 1-2 minutes, 30 MB file size for finished matrix). 
+* Select a file e.g. request4 for a 4*4 matrix (16 credits, takes approximately 5 seconds), or request1000 for a 1000*1000 matrix (1,000,000 credits, takes 1-2 minutes, 30 MB file size for finished matrix). 
 ```bash
-data=request1000.json
+data=requests/request500.json
 ```
 
 * Submit the request and capture the response (this uses the sample data with 4 stops in result.json, you can modify this with your own data)
@@ -80,7 +80,7 @@ curl -X GET \
   -H "accept: application/json" \
   -H "client-id: $clientID" \
   -H "client-secret: $clientSecret" \
-  -o result.json
+  -o responses/result.json
 ```
 
 * View the output
